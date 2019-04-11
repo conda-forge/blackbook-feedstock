@@ -1,4 +1,4 @@
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: blackbook
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/blackbook/blackbook-{{ version }}.tar.gz
-  sha256: 47611a811ecfe10f00277ea2a20c72fdfe137a7ea94eb9f03bbe27d5b12d70fd
+  sha256: 5d0b667b40cd6b1cf207917826dfc87eec72bc6933cb2b73aee84463f3bacc44
 
 build:
   number: 0
