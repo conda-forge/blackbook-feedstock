@@ -1,4 +1,4 @@
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
   name: blackbook
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/blackbook/blackbook-{{ version }}.tar.gz
-  sha256: 7a2bd83efd88c1835791056bc36ed2e83c07373846e2f75837a2272b6460355c
+  sha256: ab6370333e0b1f3791f90b4d275944b839082a6e4d6ec7bfd66bce234a8eb1df
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - blackbook=blackbook.__main__:main
 
@@ -28,7 +28,7 @@ test:
   imports:
     - blackbook
   commands:
-    - blackbook --help
+    - blackbook .
 
 about:
   home: The package home page
