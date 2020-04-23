@@ -28,7 +28,7 @@ test:
   imports:
     - blackbook
   commands:
-    - blackbook --help
+    - blackbook .
 
 about:
   home: The package home page
