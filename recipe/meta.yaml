@@ -5,26 +5,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/b/blackbook/blackbook-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/b/blackbook/blackbook-{{ version }}.tar.gz
   sha256: ab6370333e0b1f3791f90b4d275944b839082a6e4d6ec7bfd66bce234a8eb1df
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - blackbook=blackbook.__main__:main
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
+    - setuptools
     - pip
   run:
-    - python >=3
+    - python >={{ python_min }}
     - black >=18.9b0
     - loguru >=0.2.5
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - blackbook
   commands:
